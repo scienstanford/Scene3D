@@ -47,7 +47,7 @@ film = filmC ('position', position, 'size', size, 'wave', newWave);
 
 %% Make a point source
 %ps = [-5 0 -100];
-ps = [0 -5 -101.5];
+ps = [0 -3 -101.5];
 
 ppsfCamera = ppsfCameraC('lens',lens,'film',film,'point source',ps);
 

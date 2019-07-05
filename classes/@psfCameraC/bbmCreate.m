@@ -33,7 +33,7 @@ end
 ImagSyst=obj.get('imaging system',n_ob,n_im);
 
 %get image coordinate in polar coordinate
-[ps_heigth,ps_angle,ps_zpos] = coordCart2Polar3D(pSource(1),pSource(2),pSource(3)); 
+[ps_heigth,ps_angle,ps_zpos] = coordCart2Polar3D(pSource{1}(1),pSource{1}(2),pSource{1}(3)); 
 
 % The functional below was swapped in at some point, but I don't think it
 % does the same calculation (BW). So I put back the previous one.

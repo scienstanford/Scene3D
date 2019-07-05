@@ -1,4 +1,5 @@
 %%  Creates a pointArray using point light sources
+% Deprecated
 %
 %  PBRT related
 %

@@ -1,12 +1,7 @@
-
-
-
-function [ImagSyst,vararging]=paraxOpt2Imag(OptSys,F,pSource,unit)
-
-
+function [ImagSyst]=paraxOpt2Imag(OptSys,F,pSource,unit)
 % Build imaging system composed by Optical System (OptSyst) + Film + point Source
 %
-%           function [ImagSyst,vararging]=paraxOpt2Imag(OptSys,F,pSource,unit)
+% [ImagSyst,vararging]=paraxOpt2Imag(OptSys,F,pSource,unit)
 %
 % INPUT
 % OptSys: struct of the optical system,  analisis through parax optics
@@ -35,7 +30,7 @@ profile='flat'; resFilm=F.res; pixel_pitch=F.pp; %um x um
 %Imaging system
 [ImagSyst]=paraxCreateImagSyst(OptSys,filmObj,film_zpos,[0 0]);
 % Point source object
-[ps_height,ps_angle,zOUT]=coordCart2Polar3D(pSource(1),pSource(2),pSource(3));
+[ps_height,ps_angle,zOUT]=coordCart2Polar3D(pSource{1}(1),pSource{1}(2),pSource{1}(3));
 % ps_height=sqrt(pSource(1).^2+pSource(2).^2); %distance of the point source to optical axis
 % if not(pSource(2)==0) && not(pSource(1)==0)
 %     ps_angle=atan(pSource(2)/pSource(1)); %angle subtended by the point source and the x-axis in the object plane
@@ -52,3 +47,5 @@ profile='point';
 [pSourceObj]=paraxCreateObject(ps_zpos,ps_height,profile,unit);
 %Add to the Imaging System
 [ImagSyst]=paraxAddObject2ImagSyst(ImagSyst,pSourceObj);
+
+end

@@ -18,7 +18,7 @@ point = psCreate(0,1,-120);
 
 lensFileName = fullfile(s3dRootPath,'data', 'lens', '2ElLens.dat');
 
-nSamples = 151;
+nSamples = 451;
 apertureMiddleD = 8;   % mm
 lens = lensC('apertureSample', [nSamples nSamples], ...
     'fileName', lensFileName, ...
@@ -46,4 +46,4 @@ oi = camera.oiCreate;
 
 vcAddObject(oi); oiWindow;
 
-%% END
+%%
